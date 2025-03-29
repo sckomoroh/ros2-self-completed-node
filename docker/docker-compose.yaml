@@ -11,15 +11,15 @@ services:
           USER_GID: ${USER_GID}
 
     environment:
-      - USERNAME=${USERNAME}    
+      - USERNAME=${USERNAME}
 
-    container_name: ros2-iron-pcap-extract
+    container_name: ros2-iron-simple-node
     network_mode: host
     ipc: host
     volumes:
       - ../app:/ws # Replace with your host and container paths
       - ${INPUT_PATH}:/input
-      - ${OUTPUT_DIR}:/output
-    stdin_open: true 
+      # - ${OUTPUT_DIR}:/output
+    stdin_open: true
     tty: true
     # command: ["/ws/scripts/start_script.sh"]
