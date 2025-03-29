@@ -35,11 +35,13 @@ jobs:
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
       # run: cmake -S ${{github.workspace}}/app -B ${{github.workspace}}/build  -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
       # run: cmake -B ${{github.workspace}}/build  -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      shell: bash
       run: cmake -S app -B build
 
     - name: Build
       # Build your program with the given configuration
       # run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      shell: bash
       run: cmake --build build
 
     - name: Test
